@@ -47,7 +47,7 @@ public class Problem15 {
     public static void main(String[] args) {
         int x=4, y=5,move=9;
 
-        String movements="U L R R D D U L R U U";
+        String movements="U L R R D D U L R";
         String[] arr=movements.split(" ");
         int[] val=new int[2];
         val[0]=x;
@@ -55,17 +55,17 @@ public class Problem15 {
         for (String i:arr) {
             switch (i){
                 case "U":{
-                    x-=1;
+                    y+=1;
                     break;
                 }
                 case "D":{
-                    x+=1;
-                    break;
-                }case "R":{
                     y-=1;
                     break;
+                }case "R":{
+                    x+=1;
+                    break;
                 }case "L":{
-                    y+=1;
+                    x-=1;
                     break;
                 }
             }
