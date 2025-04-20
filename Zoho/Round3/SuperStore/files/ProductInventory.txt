@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Wireless Mouse",
+    "details": "Ergonomic wireless mouse with adjustable DPI",
+    "brand": "Logitech",
+    "price": 1499,
+    "available": 50,
+    "type": "Electronics",
+    "product_id": 1001
+  },
+  {
+    "name": "Gaming Keyboard",
+    "details": "Mechanical keyboard with RGB lighting",
+    "brand": "Corsair",
+    "price": 4999,
+    "available": 20,
+    "type": "Electronics",
+    "product_id": 1002
+  },
+  {
+    "name": "Notebook",
+    "details": "200 pages ruled notebook",
+    "brand": "Classmate",
+    "price": 40,
+    "available": 300,
+    "type": "Stationery",
+    "product_id": 1003
+  }
+]
