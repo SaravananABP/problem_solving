@@ -39,7 +39,7 @@ public class OrderService {
                         orderDetails1.add(orderDetails);
                         orderInventor.put(userId,orderDetails1);
                     }
-                    productDetails.setAvailable(productDetails.getAvailable()-count);
+//                    productDetails.setAvailable(productDetails.getAvailable()-count);
                     InputOutput.status("Successfully added into cart");
                 }else{
                     InputOutput.status("failed available count : "+productDetails.getAvailable());
@@ -73,15 +73,15 @@ public class OrderService {
             System.out.println("           Amount to paid  :"+totalAmount);
             int pay=InputOutput.intInput("payable amount");
             if(pay==totalAmount){
-//                for (OrderDetails i:orderInventor.get(userId)){
-//                    for(int j=1;j<ProductService.availProducts.size();j++){
-//                        ProductDetails productDetails=ProductService.availProducts.get(j);
-//                        if (i.getProduct_id().equals(productDetails.getProduct_id())){
-//                            productDetails.setAvailable(productDetails.getAvailable()-i.getCount());
-//                            ProductService.availProducts.put(j,productDetails);
-//                        }
-//                    }
-//                }
+                for (OrderDetails i:orderInventor.get(userId)){
+                    for(int j=1;j<ProductService.availProducts.size();j++){
+                        ProductDetails productDetails=ProductService.availProducts.get(j);
+                        if (i.getProduct_id().equals(productDetails.getProduct_id())){
+                            productDetails.setAvailable(productDetails.getAvailable()-i.getCount());
+                            ProductService.availProducts.put(j,productDetails);
+                        }
+                    }
+                }
                 InputOutput.status("Payment success!!!");
                 orderInventor.put(userId,null);
             }else{
